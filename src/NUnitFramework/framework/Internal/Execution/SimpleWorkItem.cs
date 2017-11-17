@@ -1,4 +1,4 @@
-﻿// ***********************************************************************
+// ***********************************************************************
 // Copyright (c) 2012-2017 Charlie Poole, Rob Prouse
 //
 // Permission is hereby granted, free of charge, to any person obtaining
@@ -72,6 +72,7 @@ namespace NUnit.Framework.Internal.Execution
 #endif
 
                 Context.CurrentResult.RecordException(ex);
+                Result = Context.CurrentResult;
             }
             finally
             {
