@@ -66,13 +66,15 @@ namespace NUnit.Framework.Internal
                     continue;
                 }
 
-#if !NETSTANDARD1_6
+#if NETSTANDARD1_6
+                if (arg.GetType().FullName == "System.DBNull")
+#else
                 if (arg is DBNull)
+#endif
                 {
                     data[i] = null;
                     continue;
                 }
-#endif
 
                 bool convert = false;
 
